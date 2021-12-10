@@ -1,0 +1,17 @@
+{
+  "name": "gun_prac",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gun": "^0.2020.1235"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.12"
+  }
+}
