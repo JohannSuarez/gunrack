@@ -55,8 +55,6 @@ npm install
 
 ### Hosting a Node
 
-> I'll write what I understand LOL
-
 In order to host a GUN Node, you will ofcourse need an internet connection / system to communicate with other computers on the network.
 
 Hosting a node can be done on a variety of devices, examples include
