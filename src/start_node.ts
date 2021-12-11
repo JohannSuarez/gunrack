@@ -14,13 +14,6 @@ import Gun = require('gun');
     peers: process.env.PEERS && process.env.PEERS.split(',') || []
   };
 
-  /*
-  if (process.env.HTTPS_KEY) {
-    config.key = fs.readFileSync(process.env.HTTPS_KEY);
-    config.cert = fs.readFileSync(process.env.HTTPS_CERT);
-    config.server = require('https').createServer(config, Gun.serve(__dirname));
-  } else {
-  */
   // @ts-ignore
   config.server = require('http').createServer(Gun.serve(__dirname));
   //}
