@@ -125,7 +125,7 @@
 
 <body>
   <div class="chat hue2 page">
-    <h2 id='title' class="chat__heading hue2 whitet">Have a Conversation...</h2>
+    <h2 id='title' class="chat__heading hue2 whitet">Gun Chat</h2>
     <ul class="chat__message-list">
       <li class="none"></li>
     </ul>
@@ -150,11 +150,13 @@
     </div>
   </div>
 
-  <script src="chat_js/"></script>
-  <script src="chat_js/gun.js"></script>
-  <script src="chat_js/nts.js"></script>
+  <script src="/jquery.js"></script>
+  <script src="/gun.js"></script>
+  <script src="/gun/nts.js"></script>
   <script>
-    var gun = Gun(location.origin + '/chat_js');
+    //var gun = Gun(location.origin + '/gun'); // THIS IS THE DAMN CONSTRUCTOR.
+
+    const gun = GUN({peers: ['https://gunapp-johann.herokuapp.com/gun','http://192.53.121.232:8765/gun']}); 
     var chat = gun.get('converse/' + location.hash.slice(1));
 
     $(".chat__submit").on('click', submit);

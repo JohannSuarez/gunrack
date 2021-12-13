@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<style>html, body, textarea { width: 100%; height: 100%; padding: 0; margin: 0; }</style>
+<textarea id="paste" placeholder="paste here!"></textarea>
+<script src="../../gun.js"></script><script>
+  gun = GUN({peers: ['https://gunapp-johann.herokuapp.com/gun','http://192.53.121.232:8765/gun']}); 
+	//gun = GUN(location.origin + '/gun');
+	copy = gun.get('test').get('paste');
+	paste.oninput = () => { copy.put(paste.value) };
+	copy.on((data) => { paste.value = data });
+</script>
