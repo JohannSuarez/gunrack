@@ -19,3 +19,6 @@ gun.get('person').put({
 gun.get('person', res => {
   console.log(res);
 });
+
+
+
