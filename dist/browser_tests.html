@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script>
+  <script type="text/javascript">
+    console.log("Mark");
+    var gun = Gun('https://gunapp-johann.herokuapp.com/gun', 'http://192.53.121.232:8765/gun');
+    //var test = gun.get('Tracy Chap');
+
+    gun.get('Daisuke').put({name: "El Huervo" });
+
+    console.log(test.get('Daisuke').val());
+
+    console.log("Set");
+  </script>
+    
+</body>
+</html>
