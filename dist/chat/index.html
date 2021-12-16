@@ -158,6 +158,12 @@
 
     const gun = GUN({peers: ['https://gunapp-johann.herokuapp.com/gun','http://192.53.121.232:8765/gun']}); 
     var chat = gun.get('converse/' + location.hash.slice(1));
+    /*
+   location.hash.slice(1) is an empty string!
+    console.log(location.hash.slice(1));
+    console.log(typeof(location.hash.slice(1)));
+    */
+    console.log("HEEEEEEEEEEEEEY");
 
     $(".chat__submit").on('click', submit);
     $(".chat_form").on('keydown', enter);
