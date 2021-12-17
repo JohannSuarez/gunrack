@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "esm": "^3.2.25",
     "gun": "^0.2020.1235"
   },
   "devDependencies": {

@@ -5,6 +5,7 @@ const gun = GUN(
   }
 );
 
+console.log(typeof (gun));
 gun.get('plant').put({
   name: "nepeta cataria"
 });
