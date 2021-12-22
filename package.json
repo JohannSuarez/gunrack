@@ -4,15 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gjournal": "node -r esm dist/test_journal.js",
+    "expressapi": "node dist/expressapi.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "esm": "^3.2.25",
-    "gun": "^0.2020.1235"
+    "express": "^4.17.2",
+    "gun": "^0.2020.1235",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@types/node": "^16.11.12"
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.11.12",
+    "@types/uuid": "^8.3.3"
   }
 }
