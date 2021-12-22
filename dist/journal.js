@@ -42,19 +42,20 @@ class Journal {
             [date_str]: message
         });
     }
-    viewEntries() {
+    async viewEntries() {
         const user_addr = this.journal_addr.get(this.username);
         let entries = [];
-        user_addr.once((data, _) => {
+        const grab_address = user_addr.once((data, _) => {
             for (const [key, value] of Object.entries(data)) {
                 entries.push(`${key} : ${value} `);
             }
-            // The first element is always metadata. Got to pop that using shift()
+            //The first element is always metadata. Got to pop that using shift()
             entries.shift();
-            entries.forEach(element => {
-                console.log(element);
-            });
+            //console.log(entries)
+            //return entries
         });
+        await grab_address;
+        return entries;
     }
     clearEntries() {
         const user_addr = this.journal_addr.get(this.username);

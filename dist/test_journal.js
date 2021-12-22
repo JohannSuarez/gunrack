@@ -8,6 +8,7 @@ const journ = new Journal(journal_user);
 //console.log(Journal.getDate());
 //console.log(journ.checkUsername());
 //console.log(journ.insertEntry("The quick brown fox jumps over the lazy dog."));
-//console.log(journ.insertEntry("Now I am become death."));
 //console.log(journ.clearEntries());
-console.log(journ.viewEntries());
+journ.viewEntries().then(res => { console.log(res) })
+
+

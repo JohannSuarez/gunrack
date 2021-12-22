@@ -48,26 +48,25 @@ class Journal {
     });
   }
 
-  viewEntries(): void {
-
+  async viewEntries(): Promise<any> {
     const user_addr = this.journal_addr.get(this.username)
     let entries: Array<string> = [];
 
-    user_addr.once((data: any, _: any) => {
+    const grab_address = user_addr.once((data: any, _: any) => {
       for (const [key, value] of Object.entries(data)) {
         entries.push(`${key} : ${value} `);
       }
 
-      // The first element is always metadata. Got to pop that using shift()
+      //The first element is always metadata. Got to pop that using shift()
       entries.shift();
-      entries.forEach(element => {
-        console.log(element)
-      })
     });
+
+    await grab_address;
+    return entries;
+
   }
 
   clearEntries(): void {
-
     const user_addr = this.journal_addr.get(this.username)
     // This dereferences the entries from their date keys.
     user_addr.once((data: any, _: any) => {
@@ -75,13 +74,10 @@ class Journal {
         user_addr.get(key).put(null)
       }
     })
-
     // Can we also completely dereference the entries themselves
     // from the User? 
     // user_addr.put(null) // This won't work. Need to investigate.
-
   }
-
 }
 
 export default Journal;
