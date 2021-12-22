@@ -7,7 +7,7 @@ const journ = new Journal(journal_user);
 
 //console.log(Journal.getDate());
 //console.log(journ.checkUsername());
-//console.log(journ.insertEntry("The quick brown fox jumps over the lazy dog."));
+//console.log(journ.insertEntry("You've been locked in here forever and you just can't say goodbye.."));
 //console.log(journ.clearEntries());
 journ.viewEntries().then(res => { console.log(res) })
 

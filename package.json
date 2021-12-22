@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gjournal": "node -r esm dist/test_journal.js",
-    "expressapi": "node dist/expressapi.js"
+    "expressapi": "node dist/expressapi.js",
+    "gunapi": "node dist/gunapi.js"
   },
   "author": "",
   "license": "ISC",

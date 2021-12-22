@@ -51,8 +51,6 @@ class Journal {
             }
             //The first element is always metadata. Got to pop that using shift()
             entries.shift();
-            //console.log(entries)
-            //return entries
         });
         await grab_address;
         return entries;

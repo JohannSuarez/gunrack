@@ -10,6 +10,20 @@ const app = (0, express_1.default)();
 const port_number = process.env.EXPRESSPORT || 44000;
 const journal_user = process.env.JOURNALUSER;
 const journ = new journal_js_1.default(journal_user);
+app.use(express_1.default.json()); // Middleware to parse JSON data
+app.use(express_1.default.urlencoded({ extended: true })); // You really need to look this up.
 app.get('/gun', (req, res) => {
-    return res.send('Received a GET HTTP method');
+    let gun_reply = "";
+    journ.viewEntries().then(entries => {
+        return res.send(entries);
+    });
+    //return res.send('GUNAPI received a GET HTTP method');
+});
+app.post('/gun', (req, res) => {
+    //console.log(req.body.text);
+    journ.insertEntry(req.body.text);
+    return res.send("POSTED!");
+});
+app.listen(port_number, () => {
+    console.log(`Example app listening on port ${port_number}!`);
 });
